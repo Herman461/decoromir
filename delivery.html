@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .preloader {
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease 0s;
+        }
+        .preloader__loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+        .preloader.hide-preloader .preloader__loader {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader.hide-preloader-wrapper {
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Доставка</title>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader__loader">
+        <img src="preloader.gif" alt="" />
+    </div>
+</div>
+
+<div class="wrapper">
+    <header class="header">
+    <div class="header__top top-header">
+        <div class="top-header__container container">
+            <button type="button" class="icon-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a class="main-header__mobile-logo">
+                <img src="img/mobile-logo.png" alt="">
+            </a>
+            <ul class="top-header__list">
+                <li class="top-header__item top-header__item_location">
+                    <a data-da=".menu__content,991.98,first" href="" class="top-header__link">
+                        <div class="top-header__location-icon">
+                            <svg>
+                                <use xlink:href="img/icons.svg#location"></use>
+                            </svg>
+                        </div>
+                        Москва
+                    </a>
+                </li>
+                <li class="top-header__item"><a href="" data-da=".menu__content,991.98,last" class="top-header__link">Получить коммерческое предложение</a>
+                </li>
+                <li class="top-header__item"><a href=""  data-da=".menu__content,991.98,last" class="top-header__link">Пригласить в тендер</a></li>
+            </ul>
+            <a data-da=".menu__content,991.98,last" href="mailto:info@decoromir.ru" class="top-header__email">
+                <div class="top-header__email-icon">
+                    <svg>
+                        <use xlink:href="img/icons.svg#email"></use>
+                    </svg>
+                </div>
+                info@decoromir.ru
+            </a>
+            <button type="button" class="top-header__search">
+                <svg>
+                    <use xlink:href="img/icons.svg#search"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="header__main main-header">
+        <div class="main-header__container container">
+            <a href="" class="main-header__logo">
+                <img src="img/logo.png" alt="">
+            </a>
+            <div data-da=".menu__content,991.98,first" class="main-header__phone phone-header">
+                <a data-da=".menu__content,991.98,last" href="tel:88002006968" class="phone-header__item">8-800-200-69-68</a>
+                <a href="tel:88002006968" class="phone-header__callback">
+                    <div class="phone-header__icon">
+                        <svg>
+                            <use xlink:href="img/icons.svg#phone"></use>
+                        </svg>
+                    </div>
+                    Обратный звонок
+                </a>
+            </div>
+            <div class="main-header__menu menu">
+                <div class="menu__content">
+                    <nav class="menu__body">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="" class="menu__link">Доставка</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Государственным учреждениям</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Оплата</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+                        </ul>
+                        <ul class="menu__mobile-list">
+                            <li class="menu__item"><a href="" class="menu__link">Каталог</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Оплата</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Доставка</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__actions actions-header">
+        <div class="actions-header__container container">
+            <div class="actions-header__catalog catalog-header">
+                <button type="button" class="catalog-header__button button">
+                    <svg>
+                        <use xlink:href="img/icons.svg#catalog"></use>
+                    </svg>
+                    <span>Каталог</span>
+                </button>
+                <div hidden class="catalog-header__body">
+                    <div class="categories">
+                        <div class="categories__column">
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/stationery.png" alt="">
+        </div>
+        <h2 class="text-block__title">Канцтовары</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Бумага для офисной техники</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Бумага для чертежных и копировальных работ</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Рулоны для кассовых аппаратов, терминалов, банкоматов и тахографов</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Конторское оборудование</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Настольные аксессуары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Штемпельные принадлежности</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Предметы оформления интерьера</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Государственная символика</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Канцелярские мелочи</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Письменные и чертежные принадлежности</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Папки и системы архивации</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Корректирующие средства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Клеящие средства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Клейкие ленты канцелярские и диспенсеры</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Деловые аксессуары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Деловая и бизнес литература</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Блокноты, записные книжки и тетради</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Ежедневники, планинги, органайзеры, календари</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Карты географические, атласы, глобусы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Демооборудование</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Офисная техника</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Продукты питания</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Гигиенические товары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Бытовая химия</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Хозтовары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Упаковка</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/mask.png" alt="">
+        </div>
+        <h2 class="text-block__title">Средства инд. защиты</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Перчатки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Средства индивидуальной защиты</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Профессиональные дерматологические средства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Медицинская одежда</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Одежда сигнальная</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Влагозащитная одежда и обувь</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Одежда и обувь для сотрудников производства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Знаки безопасности</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Средства ограждения и разметки</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/open-box.png" alt="">
+        </div>
+        <h2 class="text-block__title">Упаковка</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Клейкие ленты и диспенсеры к ним</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Упаковочная бумага и пленка</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Гофротара и гофроупаковка</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Нити, шпагаты, резинки универсальные</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Пакеты упаковочные</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Сумки хозяйственные</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Упаковка для пищевых продуктов</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Фольга и бумага для выпечки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Конверты и пакеты почтовые</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мешки для мусора</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Торговое оборудование</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Средства индивидуальной защиты</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Инвентарь для складов и магазинов</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+                        <div class="categories__column">
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/sofa.png" alt="">
+        </div>
+        <h2 class="text-block__title">Мебель</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Кресла и стулья, аксессуары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мебель для персонала</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мебель для руководителей</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Шкафы металлические</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Сейфы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Стеллажи и верстаки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мягкая мебель для офиса</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Многоместные кресла и банкетки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Аксессуары и предметы интерьера</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мебель для столовых, баров и кафе</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мебель для дома</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мебель для детских садов и учебных заведений</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Детская мебель</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/detergent.png" alt="">
+        </div>
+        <h2 class="text-block__title">Хозтовары</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Уборочный инвентарь</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Хозяйственные принадлежности</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Гигиенические товары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мешки для мусора</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Инвентарь для складов и магазинов</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Пожарное оборудование</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">СИЗ и спецодежда</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Электротовары и освещение</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Нити, шпагаты и иглы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Смазочные материалы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Хозяйственные клеи</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Клейкие ленты и диспенсеры к ним</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Упаковочная бумага и пленка</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Пакеты упаковочные</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Фольга, бумага, пленка для пищевых продуктов</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/responsive.png" alt="">
+        </div>
+        <h2 class="text-block__title">Электротовары</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Кулеры, пурифайеры, диспенсеры и фильтры для воды</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Климатотехника</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Крупная бытовая техника</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Для красоты и здоровья</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Приготовление кофе</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Для кухни</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Для дома</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Телевизоры и медиа устройства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Фото и видео техника</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Элементы питания</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Компьютеры и аксессуары, периферия</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Аксессуары для смартфонов и мобильных телефонов</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Внешние средства связи</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Кабели и адаптеры</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Аксессуары для подключения к электросети</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Фото и видео техника</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Оптические приборы</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="categories__column">
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/teddy-bear.png" alt="">
+        </div>
+        <h2 class="text-block__title">Игры и игрушки</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Конструкторы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Настольные игры</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Пазлы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Прочие игрушки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Оптические приборы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Моделирование</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Игровые наборы для девочек</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/clean-dishes.png" alt="">
+        </div>
+        <h2 class="text-block__title">Посуда</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Конструкторы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Настольные игры</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Пазлы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Прочие игрушки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Оптические приборы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Моделирование</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Игровые наборы для девочек</a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/syringe.png" alt="">
+        </div>
+        <h2 class="text-block__title">Товары для медицины</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Аптечки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Средства индивидуальной защиты медицинские</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Перевязочные материалы и средства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Одноразовое медицинское белье и одежда</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Медицинская одежда</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Инъекционные средства</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Расходные материалы для УЗИ и ЭКГ</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Медицинские бланки, журналы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Дезинфицирующие средства и антисептики</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Светильники и лампы инсектицидные и бактерицидные</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Диагностические экспресс-тесты</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Презервативы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Расходные материалы для стерилизации</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Термометры и пульсоксиметры</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Алкотестеры</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Упаковка для сбора и утилизации медицинских отходов</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Расходные материалы для рентгенологии</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Расходные материалы для лаборатории и анализов</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Средства гигиены</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link"></a></li>
+                                </ul>
+                            </div>
+                            <div class="categories__block">
+                                <div class="categories__top-block">
+                                    <div class="text-block">
+    <div class="text-block__top">
+        <div class="text-block__icon">
+            <img src="img/icons/categories/school-supplies.png" alt="">
+        </div>
+        <h2 class="text-block__title">Школа</h2>
+    </div>
+    
+</div>
+
+                                </div>
+                                <ul class="categories__list">
+                                    <li class="categories__item"><a href="" class="categories__link">Школьно-письменные принадлежности</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Принадлежности для черчения</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Альбомы и папки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Тетради</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Дневники школьные, расписание уроков</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Блокноты и записные книжки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Аксессуары для тетрадей, книг и учебников</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Папки и сумки для тетрадей, уроков труда</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Пеналы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Рюкзаки, ранцы, сумки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Принадлежности для рисования</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Товары для лепки</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Цветная бумага и картон</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Карты, атласы, глобусы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Товары для обучения</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Книги, пособия для подготовки к школе и учебно-методическая литература</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Школьные канцтовары</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Доски для классов и аудиторий</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Мебель для школы</a></li>
+                                    <li class="categories__item"><a href="" class="categories__link">Аксессуары для уроков труда и занятий творчеством</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form data-da=".header__top,991.98,last" action="#" class="actions-header__search search-header">
+                <div class="search-header__body">
+                    <div class="search-header__input">
+                        <input placeholder="Поиск по сайту" type="text" class="input">
+                    </div>
+                    <button class="search-header__button">
+                        <svg>
+                            <use xlink:href="img/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <ul class="actions-header__list">
+                <li class="actions-header__item">
+                    <a href="" class="actions-header__link">
+                        <div class="actions-header__icon">
+                            <svg>
+                                <use xlink:href="img/icons.svg#user"></use>
+                            </svg>
+                        </div>
+                        Войти
+                    </a>
+                </li>
+                <li class="actions-header__item">
+                    <a href="" class="actions-header__link">
+                        <div class="actions-header__icon">
+                            <svg>
+                                <use xlink:href="img/icons.svg#favorite"></use>
+                            </svg>
+                        </div>
+                        Избранное
+                    </a>
+                </li>
+                <li class="actions-header__item">
+                    <a href="" class="actions-header__link">
+                        <div class="actions-header__cart cart-header">
+                            <div class="cart-header__item">
+                                <span>3</span>
+                                <svg>
+                                    <use xlink:href="img/icons.svg#cart"></use>
+                                </svg>
+                            </div>
+                            <div class="cart-header__text">Корзина</div>
+<!--                            <div class="cart-header__price">124 900р</div>-->
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header__categories categories-header">
+        <div class="categories-header__container container">
+            <ul class="categories-header__list">
+                <li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#medical-mask"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Средства <br>индивид. защиты</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#syringue"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Товары <br>для медицины</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#lightbulb"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Электротовары <br>и освещение</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#bear"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Игры<br> и игрушки</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#book"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Канцтовары</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#washing-powder"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Хозтовары</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#package"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Упаковка</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#sofa"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Мебель</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        <div class="item-categories-header__icon stroke">
+            <svg>
+                <use xlink:href="img/icons.svg#eggs"></use>
+            </svg>
+        </div>
+        
+        
+        <span class="item-categories-header__text">Посуда</span>
+    </a>
+</li>
+<li class="categories-header__item item-categories-header">
+    <a href="" class="item-categories-header__link">
+        
+        
+        <div class="item-categories-header__icon">
+            <svg>
+                <use xlink:href="img/icons.svg#school"></use>
+            </svg>
+        </div>
+        
+        <span class="item-categories-header__text">Школа</span>
+    </a>
+</li>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+    <main class="page">
+        <div class="page__container container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li>
+                        <a href="" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li>
+                        <span class="breadcrumbs__item">Доставка</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="delivery">
+                <h1 class="delivery__title title">Доставка</h1>
+                <div class="delivery__block block-delivery">
+                    <h2 class="block-delivery__title small-title">Москва в пределах МКАД, Санкт-Петербург в пределах КАД*:</h2>
+                    <div class="block-delivery__text">
+                        <p>При заказе на сумму до 5 000 рублей - <b>доставка 500 руб.</b></p>
+                        <p>При заказе на сумму от 5 000 рублей - <b>доставка бесплатно</b></p>
+                    </div>
+                    <p class="block-delivery__info">Срок доставки: 1-3 рабочих дня, по договоренности.</p>
+                </div>
+                <div class="delivery__block block-delivery">
+                    <h2 class="block-delivery__title small-title">Тариф по Московской области за пределами МКАД, Ленинградcкая область за пределами КАД*:</h2>
+                    <div class="block-delivery__text">
+                        <p>При заказе на сумму до 5 000 рублей - <b>500 руб + 30 руб./км от МКАД (КАД)</b></p>
+                        <p>При заказе на сумму от 5 000 рублей - <b>30 руб./км от МКАД (КАД)</b></p>
+                        <p>При заказе на сумму от 10 000 рублей - <b>доставка бесплатно</b></p>
+                    </div>
+                    <p class="block-delivery__info">Срок доставки: 1-3 рабочих дня, по договоренности.</p>
+                </div>
+                <div class="delivery__block block-delivery">
+                    <h2 class="block-delivery__title small-title">Тариф по Российской Федерации:</h2>
+                    <div class="block-delivery__text">
+                        <p>При заказе от 10 000 руб. <b>доставка по регионам РФ бесплатная**</b></p>
+                    </div>
+                    <p class="block-delivery__info">Срок доставки: 1-3 рабочих дня, по договоренности.</p>
+                </div>
+                <div class="delivery__block block-delivery">
+                    <h2 class="block-delivery__title small-title">Самовывоз:</h2>
+                    <div class="block-delivery__text">
+                        <p>Самовывоз осуществляется из офиса. Дата вывоза заказа обговаривается. <b>Услуга бесплатная.</b></p>
+                        <p>При самовывозе из пунктов выдачи СДЭК по Москве и МО - <b>стоимость заказа увеличивается на 300 руб.</b></p>
+                        <p>При самовывозе из пунктов выдачи СДЭК по России - <b>стоимость заказа увеличивается на 700 руб.</b></p>
+                        <p>Доставка в страны СНГ - <b>осуществляется любым транспортом на Ваш выбор.</b></p>
+                        <p>При отказе от всего доставленного товара - <b>покупатель оплачивает стоимость доставки в размере 500 руб. + расходы за МКАД</b></p>
+                    </div>
+                </div>
+                <h2 class="delivery__info small-title">Уважаемые клиенты предлагаем Вам услуги доставки заказанного товара</h2>
+                <div class="delivery__phones">Телефоны: <a href="tel:84957720889">8 (495) 772-08-89</a>; <a href="tel:84957443089">8 (495) 744-30-89</a>; <a href="tel:88002006988">8 (800) 200-69-88</a></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+    <div class="footer__main main-footer">
+        <div class="main-footer__container container">
+            <div class="main-footer__body">
+                <nav class="main-footer__menu menu-footer">
+                    <div class="menu-footer__column">
+                        <h6 class="menu-footer__title title-footer">Каталог</h6>
+                        <ul class="menu-footer__list">
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Средства для индивидуальной защиты</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Электротовары и освещение</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Товары для медецины</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Игры и игрушки</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Канцтовары</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Хозтовары</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Упаковка</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Мебель</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Посуда</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Школа</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-footer__column">
+                        <h6 class="menu-footer__title title-footer">Акции и выгодные предложения</h6>
+                        <ul class="menu-footer__list">
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Распродажа</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Успей купить выгодно</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Самые нужные товары по низким ценам</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Товары бизнес-класса</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Акции</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-footer__column">
+                        <h6 class="menu-footer__title title-footer">Информация</h6>
+                        <ul class="menu-footer__list">
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">О компании</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Оптовикам</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Доставка</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Оплата</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Гарантия и возврат</a></li>
+                            <li class="menu-footer__item"><a href="" class="menu-footer__link">Контакты</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="main-footer__contacts contacts-footer">
+                    <h6 class="contacts-footer__title title-footer">Наши контакты:</h6>
+                    <h6 class="contacts-footer__mobile-title title">Контакты</h6>
+                    <a href="mailto:info@decoromir.ru" class="contacts-footer__email">Почта: info@decoromir.ru</a>
+                    <a href="tel:Телефон: 88002006968" class="contacts-footer__phone">Телефон: 8 (800) 200-69-68</a>
+                    <div class="contacts-footer__address">Адрес: 119501, г. Москва <br>ул. Лобачевского, дом 136, офис 9</div>
+                    <h6 class="contacts-footer__title title-footer">Принимаем к оплате:</h6>
+                    <ul class="contacts-footer__cards cards-footer">
+                        <li class="cards-footer__item">
+                            <a href="" class="cards-footer__link">
+                                <img src="img/cards/visa.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="cards-footer__item">
+                            <a href="" class="cards-footer__link">
+                                <img src="img/cards/mir.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="cards-footer__item">
+                            <a href="" class="cards-footer__link">
+                                <img src="img/cards/mc.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom bottom-footer">
+        <div class="bottom-footer__container container">
+            <div class="menu-footer__copy">© Интернет-гипермаркет "Декоромир" 2022. Все права защищены.</div>
+        </div>
+    </div>
+    <div class="footer__mobile mobile-footer">
+        <div class="mobile-footer__container container">
+            <nav class="mobile-footer__menu">
+                <ul class="mobile-footer__list">
+                    <li class="mobile-footer__item">
+                        <a href="" class="mobile-footer__link">
+                            <div class="mobile-footer__icon">
+                                <img src="img/icons/nav/home.png" alt="">
+                            </div>
+                            <span class="mobile-footer__text">Главная</span>
+                        </a>
+                    </li>
+                    <li class="mobile-footer__item">
+                        <a href="" class="mobile-footer__link">
+                            <div class="mobile-footer__icon">
+                                <img src="img/icons/nav/menu.png" alt="">
+                            </div>
+                            <span class="mobile-footer__text">Каталог</span>
+                        </a>
+                    </li>
+                    <li class="mobile-footer__item">
+                        <a href="" class="mobile-footer__link">
+                            <div class="mobile-footer__icon">
+                                <img src="img/icons/nav/cart.png" alt="">
+                            </div>
+                            <span class="mobile-footer__text">Корзина</span>
+                        </a>
+                    </li>
+                    <li class="mobile-footer__item">
+                        <a href="" class="mobile-footer__link">
+                            <div class="mobile-footer__icon">
+                                <img src="img/icons/nav/favorite.png" alt="">
+                            </div>
+                            <span class="mobile-footer__text">Избранное</span>
+                        </a>
+                    </li>
+                    <li class="mobile-footer__item">
+                        <a href="" class="mobile-footer__link">
+                            <div class="mobile-footer__icon">
+                                <img src="img/icons/nav/user.png" alt="">
+                            </div>
+                            <span class="mobile-footer__text">Кабинет</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+</div>
+
+<script>
+    window.addEventListener('load', function() {
+        const preloader = document.querySelector('.preloader')
+        preloader.classList.add('hide-preloader')
+        setTimeout(() => {
+            preloader.classList.add('hide-preloader-wrapper')
+        }, 20)
+        setTimeout(() => {
+            document.body.style.overflowY = 'auto'
+        }, 10)
+
+    })
+</script>
+<script src="js/app.js"></script>
+</body>
+
+</html>
+
